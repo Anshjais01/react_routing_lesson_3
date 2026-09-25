@@ -1,21 +1,22 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Navbar from './Components/Navbar'
+import Footer from './Components/Footer'
+import Home from './pages/Home'
+import About from './pages/About'
+import Skills from './pages/Skills'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-    <h1>  
-      Topic
-    </h1>
-    <p> 
-      this is what i want to show 
-    </p>
-    </>
+    <BrowserRouter>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/skills" element={<Skills />} />
+      </Routes>
+      <Footer />
+    </BrowserRouter>
   )
 }
 
